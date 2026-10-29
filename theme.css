@@ -27,6 +27,18 @@ body {
   --facile-light-background-alt: #F2F1EE;
   --facile-light-secondary: #EFEEEA;
   --facile-light-secondary-alt: #E4E3DE;
+
+  /* Everforest syntax colors */
+  --everforest-dark-green: #A7C080;
+  --everforest-dark-purple: #D699B6;
+  --everforest-dark-blue: #7FBBB3;
+  --everforest-dark-grey: #859289;
+  --everforest-dark-fg: #D3C6AA;
+  --everforest-light-green: #8DA101;
+  --everforest-light-purple: #DF69BA;
+  --everforest-light-blue: #3A94C5;
+  --everforest-light-grey: #939F91;
+  --everforest-light-fg: #5C6A72;
 }
 
 /* Dark mode */
@@ -61,7 +73,20 @@ body {
   --bold-color: var(--h2-color);
 
   /* code colors */
-  --code-normal: #BDB2D6;
+  --code-normal: var(--everforest-dark-fg);
+  --code-inline: #BDB2D6;
+
+  /* syntax highlighting (Alabaster-style: only strings, values, comments, functions) */
+  --code-string: var(--everforest-dark-green);
+  --code-value: var(--everforest-dark-purple);
+  --code-comment: var(--everforest-dark-grey);
+  --code-function: var(--everforest-dark-blue);
+  --code-keyword: var(--code-normal);
+  --code-operator: var(--code-normal);
+  --code-punctuation: var(--code-normal);
+  --code-property: var(--code-normal);
+  --code-tag: var(--code-normal);
+  --code-important: var(--code-normal);
 
   /* checked box */
   --checkbox-color: var(--interactive-accent);
@@ -112,7 +137,20 @@ body {
   --bold-color: var(--h2-color);
 
   /* code colors */
-  --code-normal: #6E5A9E;
+  --code-normal: var(--everforest-light-fg);
+  --code-inline: #6E5A9E;
+
+  /* syntax highlighting (Alabaster-style: only strings, values, comments, functions) */
+  --code-string: var(--everforest-light-green);
+  --code-value: var(--everforest-light-purple);
+  --code-comment: var(--everforest-light-grey);
+  --code-function: var(--everforest-light-blue);
+  --code-keyword: var(--code-normal);
+  --code-operator: var(--code-normal);
+  --code-punctuation: var(--code-normal);
+  --code-property: var(--code-normal);
+  --code-tag: var(--code-normal);
+  --code-important: var(--code-normal);
 
   /* checked box */
   --checkbox-color: var(--interactive-accent);
@@ -129,4 +167,10 @@ body {
 
   /* no translucent sidepanels */
   --workspace-background-translucent: var(--facile-light-background);
+}
+
+/* Inline code keeps its own color */
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code {
+  color: var(--code-inline);
 }
