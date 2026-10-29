@@ -1,34 +1,133 @@
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 14px;
+  --radius-xl: 18px;
+  --input-radius: 8px;
+  --tab-radius-active: 8px 8px 0 0;
+  --checkbox-radius: 4px;
+  --toggle-radius: 999px;
+  --toggle-thumb-radius: 999px;
+  --slider-thumb-radius: 50%;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* Fonts */
+body {
+  --font-text-theme: "Helvetica Neue", sans-serif;
+  --font-monospace-theme: "JetBrains Mono", monospace;
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+/* Palette */
+body {
+  --facile-dark-background: #202124;
+  --facile-dark-background-alt: #28292C;
+  --facile-dark-secondary: #1A1B1E;
+  --facile-dark-secondary-alt: #2E2F33;
+
+  --facile-light-background: #FAF9F7;
+  --facile-light-background-alt: #F2F1EE;
+  --facile-light-secondary: #EFEEEA;
+  --facile-light-secondary-alt: #E4E3DE;
 }
 
-.menu {
-	padding: var(--size-2-1);
+/* Dark mode */
+.theme-dark {
+  --background-primary:       var(--facile-dark-background);
+  --background-primary-alt:   var(--facile-dark-background-alt);
+  --background-secondary:     var(--facile-dark-secondary);
+  --background-secondary-alt: var(--facile-dark-secondary-alt);
+
+  /* text colors */
+  --text-normal: #E2E0DC;
+  --text-muted: #A9A6A0;
+  --text-faint: #7E7B75;
+
+  /* accent colors */
+  --text-accent: #A8B9A1;
+  --text-accent-hover: #C1D0B9;
+  --interactive-accent: #A8B9A1;
+  --interactive-accent-hover: #C1D0B9;
+  --text-on-accent: var(--facile-dark-background);
+
+  /* header colors */
+  --h1-color: #D9A55A;
+  --h2-color: #D3B887;
+  --h3-color: #CDC4B1;
+
+  /* link colors */
+  --link-color: #A8B9A1;
+  --link-external-color: var(--link-color);
+
+  /* bold text */
+  --bold-color: var(--h2-color);
+
+  /* code colors */
+  --code-normal: #BDB2D6;
+
+  /* checked box */
+  --checkbox-color: var(--interactive-accent);
+  --checkbox-color-hover: var(--interactive-accent-hover);
+  --checkbox-marker-color: var(--facile-dark-background);
+
+  /* unchecked box */
+  --checkbox-border-color: var(--text-faint);        
+  --checkbox-border-color-hover: var(--text-muted);
+
+  /* text of completed tasks */
+  --checklist-done-color: var(--text-muted);
+  --checklist-done-decoration: line-through;
+
+  /* no translucent sidepanels */
+  --workspace-background-translucent: var(--facile-dark-background);
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
+/* Light mode */
+.theme-light {
+  --background-primary:       var(--facile-light-background);
+  --background-primary-alt:   var(--facile-light-background-alt);
+  --background-secondary:     var(--facile-light-secondary);
+  --background-secondary-alt: var(--facile-light-secondary-alt);
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+  /* text colors */
+  --text-normal: #2B2A28;
+  --text-muted: #6B6862;
+  --text-faint: #918D86;
+
+  /* accent colors */
+  --text-accent: #5E7A55;
+  --text-accent-hover: #4C6644;
+  --interactive-accent: #5E7A55;
+  --interactive-accent-hover: #4C6644;
+  --text-on-accent: var(--facile-light-background);
+
+  /* header colors */
+  --h1-color: #9C6210;
+  --h2-color: #8F6A30;
+  --h3-color: #6E6352;
+
+  /* link colors */
+  --link-color: #5E7A55;
+  --link-external-color: var(--link-color);
+
+  /* bold text */
+  --bold-color: var(--h2-color);
+
+  /* code colors */
+  --code-normal: #6E5A9E;
+
+  /* checked box */
+  --checkbox-color: var(--interactive-accent);
+  --checkbox-color-hover: var(--interactive-accent-hover);
+  --checkbox-marker-color: var(--facile-light-background);
+
+  /* unchecked box */
+  --checkbox-border-color: var(--text-faint);
+  --checkbox-border-color-hover: var(--text-muted);
+
+  /* text of completed tasks */
+  --checklist-done-color: var(--text-muted);
+  --checklist-done-decoration: line-through;
+
+  /* no translucent sidepanels */
+  --workspace-background-translucent: var(--facile-light-background);
 }
